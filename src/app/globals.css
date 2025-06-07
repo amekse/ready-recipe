@@ -1,12 +1,24 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFF8F0;
+  --foreground: #4A4A4A;
+  --text: #3E3E3E;
+  --card-bg: #FFFFFF;
+  --search-bg: #F0E7DB;
+  --button-bg: #FF6F3C;
+  --button-text: #FFFFFF;
+  --link-color: #E65C00;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1E1E1E;
+    --foreground: #E0E0E0;
+    --text: #D6D6D6;
+    --card-bg: #2C2C2C;
+    --search-bg: #3A3A3A;
+    --button-bg: #FF8C5A;
+    --button-text: #1E1E1E;
+    --link-color: #FFB07C;
   }
 }
 
@@ -22,6 +34,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100vw;
+  height: 100vh;
 }
 
 * {
