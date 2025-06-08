@@ -4,7 +4,7 @@ export default async function TagsPanel() {
 
     return (
         <div>
-            Show me:  {tags.map((tag:string) => <button>{tag}</button>)}
+            Show me:  {tags.map((tag:string) => <button key={tag}>{tag}</button>)}
         </div>
     )
 }
