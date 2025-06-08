@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import CommonHeader from "./_components/CommonHeader";
-import CommonFooter from "./_components/CommonFooter";
+import CommonHeader from "../_components/CommonHeader";
+import CommonFooter from "../_components/CommonFooter";
 
 export const metadata: Metadata = {
   title: "Ready Recipe",
