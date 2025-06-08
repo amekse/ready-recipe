@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query"
 import SuggestionsPanelSkeleton from "./loaders/SuggestionsPanelSkeleton"
 import ReactQueryProvider from "./ReactQueryProvider"
 import { TSuggestion } from "@/common.types"
+import Link from "next/link"
 
 function WrappedSuggestionsPanel() {
     const { isLoading, error, data } = useQuery({
@@ -25,7 +26,7 @@ function WrappedSuggestionsPanel() {
             {
                 data?.recipes.map((suggestion:TSuggestion) =>
                 <div key={suggestion.id}>
-                    <span>{suggestion.name}</span>
+                    <Link href={`/recipe/${suggestion.id}`}>{suggestion.name}</Link>
                 </div>)
             }
         </div>
