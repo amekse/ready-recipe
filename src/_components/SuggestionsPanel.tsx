@@ -7,25 +7,29 @@ import { TSuggestion } from "@/common.types"
 import Link from "next/link"
 import styles from "./components.module.css";
 import { useState } from "react"
+import { getSuggestionsEndpoint } from "@/_lib/Endpoints"
+import { suggestionsFinalPageLimit, suggestionsPaginationCount, suggestionsStartPageLimit } from "@/_lib/Constants"
 
 function WrappedSuggestionsPanel() {
     const { isLoading, error, data } = useQuery({
         queryKey: ['suggestion-panel-recipes'],
-        queryFn: () => fetch(`https://dummyjson.com/recipes?limit=12&select=name,image`).then(res => res.json()),
+        queryFn: () => fetch(getSuggestionsEndpoint(12)).then(res => res.json()),
         staleTime: 3600 * 1000,
     })
 
     const [pageSkip, setPageSkip] = useState(0);
 
     const onClickChevronNext = () => {
-        if (pageSkip === 8) return;
-        setPageSkip(pageSkip + 4);
+        if (pageSkip === suggestionsFinalPageLimit) return;
+        setPageSkip(pageSkip + suggestionsPaginationCount);
     }
 
     const onClickChevronPrev = () => {
-        if (pageSkip === 0) return;
-        setPageSkip(pageSkip - 4);
+        if (pageSkip === suggestionsStartPageLimit) return;
+        setPageSkip(pageSkip - suggestionsPaginationCount);
     }
+
+    const showPagedList = () => data?.recipes.slice(pageSkip, pageSkip+4);
 
     if (isLoading) {
         return <SuggestionsPanelSkeleton />
@@ -39,7 +43,7 @@ function WrappedSuggestionsPanel() {
         <div className={styles.suggestionsPanel}>
             <button className={styles.suggestionsPanelChevrons} onClick={onClickChevronPrev} disabled={pageSkip === 0}>&#11207;</button>
             {
-                data?.recipes.slice(pageSkip, pageSkip+4).map((suggestion:TSuggestion) =>
+                showPagedList().map((suggestion:TSuggestion) =>
                 <Link className={styles.suggestionCard} key={suggestion.id} href={`/recipe/${suggestion.id}`}>
                     {suggestion.name}
                 </Link>)

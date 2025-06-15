@@ -1,5 +1,7 @@
+import { getTagsEndpoint } from "@/_lib/Endpoints";
+
 export default async function TagsPanel() {
-    const res = await fetch('https://dummyjson.com/recipes/tags', { next: { revalidate: 86400 } });
+    const res = await fetch(getTagsEndpoint(), { next: { revalidate: 86400 } });
     const tags = await res.json();
 
     return (

@@ -4,11 +4,12 @@ import { use } from "react";
 import styles from "../../page.module.css";
 import ReactQueryProvider from "@/_components/ReactQueryProvider";
 import { useQuery } from "@tanstack/react-query";
+import { getRecipeEndpoint } from "@/_lib/Endpoints";
 
 function WrappedRecipe({ id }: { id: string }) {
     const { data, isLoading, error } = useQuery({
         queryKey: ['recipe-details', id],
-        queryFn: () => fetch(`https://dummyjson.com/recipes/${id}`).then(res => res.json())
+        queryFn: () => fetch(getRecipeEndpoint(id)).then(res => res.json())
     })
 
     if (isLoading) {
