@@ -29,7 +29,7 @@ function WrappedSuggestionsPanel() {
         setPageSkip(pageSkip - suggestionsPaginationCount);
     }
 
-    const showPagedList = () => data?.recipes.slice(pageSkip, pageSkip+4);
+    const showPagedList = () => data?.recipes.slice(pageSkip, pageSkip + suggestionsPaginationCount);
 
     if (isLoading) {
         return <SuggestionsPanelSkeleton />
