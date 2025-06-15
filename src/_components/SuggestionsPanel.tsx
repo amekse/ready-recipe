@@ -40,9 +40,9 @@ function WrappedSuggestionsPanel() {
             <button className={styles.suggestionsPanelChevrons} onClick={onClickChevronPrev} disabled={pageSkip === 0}>&#11207;</button>
             {
                 data?.recipes.slice(pageSkip, pageSkip+4).map((suggestion:TSuggestion) =>
-                <div key={suggestion.id} className={styles.suggestionCard}>
-                    <Link href={`/recipe/${suggestion.id}`}>{suggestion.name}</Link>
-                </div>)
+                <Link className={styles.suggestionCard} key={suggestion.id} href={`/recipe/${suggestion.id}`}>
+                    {suggestion.name}
+                </Link>)
             }
             <button className={styles.suggestionsPanelChevrons} onClick={onClickChevronNext} disabled={pageSkip === 8}>&#11208;</button>
         </div>
