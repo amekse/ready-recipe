@@ -1,6 +1,8 @@
 # Simple Recipe App
 
-A small and functional recipe browsing app built with **Next.js** perfect for learning and experimenting with modern web development.
+A small and functional recipe browsing app built with **Next.js** — perfect for learning and experimenting with modern web development.
+
+[Live Demo](https://ready-recipe-three.vercel.app/)
 
 ## Features
 
