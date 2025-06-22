@@ -36,8 +36,8 @@ function WrappedSuggestionsPanel() {
         return <SuggestionsPanelSkeleton />
     }
 
-    if (error) {
-        return <div>Something went wrong!</div>
+    if (error || !data) {
+        return <div>Oops, Nothing found...</div>
     }
 
     return (

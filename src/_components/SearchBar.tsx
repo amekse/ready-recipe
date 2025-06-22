@@ -40,7 +40,7 @@ function SearchBarWrapped() {
                     isLoading && <span style={{ fontSize: '12px', margin: '4px' }}>Loading...</span>
                 }
                 {
-                    error && <span style={{ fontSize: '12px', margin: '4px' }}>Nothing found...</span>
+                    error || (!data && !!searchInput.trim()) && <span style={{ fontSize: '12px', margin: '4px' }}>Nothing found...</span>
                 }
                 {
                     data?.recipes.map((recipe: {id: string, name: string}, index:number) => 
