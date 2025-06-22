@@ -58,4 +58,29 @@
     height: 100%;
     border-radius: 8px;
     background-color: var(--card-bg);
+    overflow: hidden;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.suggestionCardImage {
+    position: relative !important;
+
+    height: auto !important;
+    width: 100% !important;
+    border-radius: 8px;
+
+    object-fit: contain;
+}
+
+.suggestionCardInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    
+    height: 100%; 
 }

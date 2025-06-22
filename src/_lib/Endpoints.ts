@@ -1,5 +1,5 @@
 function getSuggestionsEndpoint(limit: number) {
-    return `https://dummyjson.com/recipes?limit=${limit}&select=name,image`;
+    return `https://dummyjson.com/recipes?limit=${limit}&select=name,image,prepTimeMinutes,cookTimeMinutes,cuisine,difficulty`;
 }
 
 function getTagsEndpoint() {

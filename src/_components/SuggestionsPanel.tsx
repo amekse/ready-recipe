@@ -9,6 +9,7 @@ import styles from "./components.module.css";
 import { useState } from "react"
 import { getSuggestionsEndpoint } from "@/_lib/Endpoints"
 import { suggestionsFinalPageLimit, suggestionsPaginationCount, suggestionsStartPageLimit } from "@/_lib/Constants"
+import Image from "next/image"
 
 function WrappedSuggestionsPanel() {
     const { isLoading, error, data } = useQuery({
@@ -45,7 +46,13 @@ function WrappedSuggestionsPanel() {
             {
                 showPagedList().map((suggestion:TSuggestion) =>
                 <Link className={styles.suggestionCard} key={suggestion.id} href={`/recipe/${suggestion.id}`}>
-                    {suggestion.name}
+                    <Image src={suggestion.image} alt={""} className={styles.suggestionCardImage} fill/>
+                    <div className={styles.suggestionCardInfo}>
+                        <span style={{ fontWeight: 'bold' }}>{suggestion.name}</span>
+                        <span style={{ fontSize: '12px' }}><strong>Prep:</strong> {suggestion.prepTimeMinutes}, <strong>Cook:</strong> {suggestion.cookTimeMinutes}</span>
+                        <span style={{ fontSize: '12px' }}><strong>Cuisine:</strong> {suggestion.cuisine}</span>
+                        <span style={{ fontSize: '12px' }}><strong>Difficulty:</strong> {suggestion.difficulty}</span>
+                    </div>
                 </Link>)
             }
             <button className={styles.suggestionsPanelChevrons} onClick={onClickChevronNext} disabled={pageSkip === 8}>&#11208;</button>
