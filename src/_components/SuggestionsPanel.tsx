@@ -1,7 +1,6 @@
 'use client'
 
 import { useQuery } from "@tanstack/react-query"
-import SuggestionsPanelSkeleton from "./loaders/SuggestionsPanelSkeleton"
 import ReactQueryProvider from "./ReactQueryProvider"
 import { TSuggestion } from "@/common.types"
 import Link from "next/link"
@@ -33,7 +32,7 @@ function WrappedSuggestionsPanel() {
     const showPagedList = () => data?.recipes.slice(pageSkip, pageSkip + suggestionsPaginationCount);
 
     if (isLoading) {
-        return <SuggestionsPanelSkeleton />
+        return <div>Loading...</div>
     }
 
     if (error || !data) {
@@ -49,9 +48,8 @@ function WrappedSuggestionsPanel() {
                     <Image src={suggestion.image} alt={""} className={styles.suggestionCardImage} fill/>
                     <div className={styles.suggestionCardInfo}>
                         <span style={{ fontWeight: 'bold', color: 'var(--link-color)' }}>{suggestion.name}</span>
-                        <span style={{ fontSize: '12px' }}><strong>Prep:</strong> {suggestion.prepTimeMinutes}, <strong>Cook:</strong> {suggestion.cookTimeMinutes}</span>
-                        <span style={{ fontSize: '12px' }}><strong>Cuisine:</strong> {suggestion.cuisine}</span>
-                        <span style={{ fontSize: '12px' }}><strong>Difficulty:</strong> {suggestion.difficulty}</span>
+                        <span style={{ fontSize: '12px' }}>&#9202; <strong>Prep:</strong> {suggestion.prepTimeMinutes} mins &bull; &#9201; <strong>Cook:</strong> {suggestion.cookTimeMinutes} mins</span>
+                        <span style={{ fontSize: '12px' }}>&#9731; <strong>Difficulty:</strong> {suggestion.difficulty}</span>
                     </div>
                 </Link>)
             }

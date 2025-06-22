@@ -6,7 +6,6 @@ import ReactQueryProvider from "@/_components/ReactQueryProvider";
 import { useQuery } from "@tanstack/react-query";
 import { getRecipeEndpoint } from "@/_lib/Endpoints";
 import { TRecipe } from "@/common.types";
-import Image from "next/image";
 
 function WrappedRecipe({ id }: { id: string }) {
     const { data, isLoading, error } = useQuery<TRecipe>({

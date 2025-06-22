@@ -57,7 +57,7 @@
     flex: 1;
     min-width: 20%;
     height: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: var(--card-bg);
     overflow: hidden;
     padding: 8px;
@@ -72,7 +72,7 @@
 
     height: auto !important;
     width: 100% !important;
-    border-radius: 8px;
+    border-radius: 12px;
 
     object-fit: contain;
 }
@@ -81,7 +81,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: 8px;
     
     height: 100%; 
 }
@@ -97,7 +98,6 @@
     border-radius: 12px;
     padding: 4px 8px;
     font-size: 12px;
-    cursor: pointer;
 
     background-color: var(--button-secondary-bg);
     color: var(--button-secondary-text);
@@ -153,7 +153,6 @@
     width: calc(100% - 8px);
     color: var(--text);
     border: none;
-    cursor: pointer;
     text-align: start;
     border-radius: 4px;
     
@@ -162,4 +161,47 @@
 
     background-color: var(--button-bg);
     color: var(--button-text);
+}
+
+.containerColumn {
+  width: 100%;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  background-color: var(--card-bg);
+}
+
+.containerRow {
+  width: 100%;
+  padding: 8px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.recipeImage {
+  width: 6vw;
+  height: 6vw;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.recipeOfDayRightContainer {
+    display: flex;
+    flex-direction: row;
+    height: '100%';
+    gap: 8px;
+}
+
+.recipeOfDayRightContainerButton {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
 }
