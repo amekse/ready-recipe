@@ -9,5 +9,5 @@ export default function RecipeOfDayLinkButton({id}:{id: string}) {
     const handleRecipeOfDayClick = () => {
         router.push(`/recipe/${id}`);
     }
-    return <button className={styles.recipeOfDayRightContainerButton}>&#128279;</button>;
+    return <button onClick={handleRecipeOfDayClick} className={styles.recipeOfDayRightContainerButton}>&#128279;</button>;
 }
