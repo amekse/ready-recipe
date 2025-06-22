@@ -48,7 +48,7 @@ function WrappedSuggestionsPanel() {
                 <Link className={styles.suggestionCard} key={suggestion.id} href={`/recipe/${suggestion.id}`}>
                     <Image src={suggestion.image} alt={""} className={styles.suggestionCardImage} fill/>
                     <div className={styles.suggestionCardInfo}>
-                        <span style={{ fontWeight: 'bold' }}>{suggestion.name}</span>
+                        <span style={{ fontWeight: 'bold', color: 'var(--link-color)' }}>{suggestion.name}</span>
                         <span style={{ fontSize: '12px' }}><strong>Prep:</strong> {suggestion.prepTimeMinutes}, <strong>Cook:</strong> {suggestion.cookTimeMinutes}</span>
                         <span style={{ fontSize: '12px' }}><strong>Cuisine:</strong> {suggestion.cuisine}</span>
                         <span style={{ fontSize: '12px' }}><strong>Difficulty:</strong> {suggestion.difficulty}</span>

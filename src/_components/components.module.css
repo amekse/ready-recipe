@@ -84,3 +84,20 @@
     
     height: 100%; 
 }
+
+.tagsPanel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.tagsPanelButton {
+    border: none;
+    border-radius: 12px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+}
