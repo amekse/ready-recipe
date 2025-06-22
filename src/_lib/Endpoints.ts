@@ -10,8 +10,13 @@ function getRecipeEndpoint(id: string) {
     return `https://dummyjson.com/recipes/${id}`;
 }
 
+function getSearchSuggestionEndpoint(search:string) {
+    return `https://dummyjson.com/recipes/search?q=${search}&select=name&limit=5`;
+}
+
 export {
     getSuggestionsEndpoint,
     getTagsEndpoint,
-    getRecipeEndpoint
+    getRecipeEndpoint,
+    getSearchSuggestionEndpoint
 }

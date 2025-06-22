@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 }
 
 .footer {
@@ -19,7 +20,7 @@
     align-items: center;
     gap: 16px;
 
-    background-color: var(--foreground);
+    background-color: var(--card-bg);
     color: var(--link-color);
 }
 
@@ -100,4 +101,65 @@
 
     background-color: var(--button-secondary-bg);
     color: var(--button-secondary-text);
+}
+
+.headH2 {
+    font-family: Tahoma, sans-serif;
+    color: var(--heading-color);
+}
+
+.headThemeButton {
+    border: none;
+    border-radius: 12px;
+    padding: 4px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.headSearchContainer {
+    width: 30%;
+    height: auto;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.headSearch {
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    width: 100%;
+
+    background-color: var(--search-bg);
+    color: var(--button-secondary-text);
+}
+.headSearch:focus {
+    outline: var(--foreground);
+}
+
+.searchSuggestionsContainer {
+    width: 100%;
+    height: auto;
+    background-color: var(--card-bg);
+    position: absolute;
+    width: 100%;
+    top: 42px;
+    border-radius: 12px;
+    z-index: 5;
+}
+
+.searchSuggestionItem {
+    width: calc(100% - 8px);
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+    text-align: start;
+    border-radius: 4px;
+    
+    padding: 8px;
+    margin: 2px;
+
+    background-color: var(--button-bg);
+    color: var(--button-text);
 }
