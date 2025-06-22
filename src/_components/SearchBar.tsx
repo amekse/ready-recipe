@@ -44,7 +44,7 @@ function SearchBarWrapped() {
                 }
                 {
                     data?.recipes.map((recipe: {id: string, name: string}, index:number) => 
-                        <button key={recipe.id} onClick={_ => handleSuggestionClick(recipe.id)} className={styles.searchSuggestionItem} style={{ borderRadius: suggestionItemRadiusSelect(index, data?.recipes.length) }}>{recipe.name}</button>
+                        <button key={recipe.id} onClick={() => handleSuggestionClick(recipe.id)} className={styles.searchSuggestionItem} style={{ borderRadius: suggestionItemRadiusSelect(index, data?.recipes.length) }}>{recipe.name}</button>
                     )
                 }
             </div>

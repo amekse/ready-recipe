@@ -24,7 +24,7 @@ function WrappedRecipe({ id }: { id: string }) {
     if (error || !data) {
         return (
             <div className={styles.page}>
-                <span>Sorry, couldn't get the recipe. Please try again later.</span>
+                <span>Sorry, couldn&apos;t get the recipe. Please try again later.</span>
             </div>
         )
     }
